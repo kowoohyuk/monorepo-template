@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "es6",
+    "lib": ["ES5", "ES6", "ESNext", "DOM"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "isolatedModules": true
+  },
+  "references": [
+    {
+      "path": "packages/common-components"
+    },
+    {
+      "path": "packages/common-styles"
+    },
+  ],
+  "exclude": ["packages/**/dist/**"],
+  "include": []
+}

@@ -1,0 +1,38 @@
+// multi-root workspaces를 위한 파일입니다.
+// 참고: https://code.visualstudio.com/docs/editor/multi-root-workspaces
+{
+  "folders": [
+    {
+      "path": "packages/common-components"
+    },
+    {
+      "path": "packages/common-styles"
+    },
+    {
+      "path": "packages/prototype-a"
+    },
+    {
+      "path": "packages/prototype-b"
+    }
+  ],
+  "settings": {
+    "search.exclude": {
+      "**/.yarn": true,
+      "**/.pnp.*": true,
+      "**/dist": true,
+      "**/node_modules": true,
+      "tsconfig.tsbuildinfo": true
+    },
+    "eslint.nodePath": "../../.yarn/sdks",
+    "typescript.tsdk": "../../.yarn/sdks/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "prettier.prettierPath": "../../.yarn/sdks/prettier/index.js"
+  },
+  "extensions": {
+    "recommendations": [
+      "arcanis.vscode-zipfs",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ]
+  }
+}

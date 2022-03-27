@@ -1,0 +1,37 @@
+{
+  "name": "prototype-a",
+  "packageManager": "yarn@3.2.0",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "webpack serve"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.7",
+    "@common/components": "workspace:*",
+    "@common/styles": "workspace:*",
+    "@emotion/react": "^11.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.8",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-transition-group": "^4.4.4",
+    "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "prop-types": "^15.8.1",
+    "regenerator-runtime": "^0.13.9",
+    "typescript": "^4.5.4",
+    "typescript-styled-plugin": "^0.18.2",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
