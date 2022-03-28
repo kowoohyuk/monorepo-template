@@ -1,6 +1,6 @@
 # woowahan-monorepo-template
 
-jest 및 storybook을 제외한 기본적인 형태의 모노레포입니다.  
+storybook을 적용한 모노레포입니다.  
 ## 시작하기
 
 1. yarn이 설치되어 있지 않다면 <code>npm install -g yarn</code>을 우선 실행해 주세요. 

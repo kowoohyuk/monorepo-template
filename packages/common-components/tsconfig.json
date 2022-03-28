@@ -17,5 +17,6 @@
     "@types/*",
     "src/**/*",
     "src/**/*.json",
+    ".storybook/*",
   ]
 }

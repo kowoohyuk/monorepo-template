@@ -1,14 +1,19 @@
 const path = require('path');
 
 module.exports = {
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'prettier', 'plugin:storybook/recommended'],
   plugins: ['prettier', 'react-hooks', '@emotion'],
   rules: {
     'prettier/prettier': 'error',
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['**/webpack.*.js', '**/script/*.js'],
+        devDependencies: [
+          '**/*.stories.tsx',
+          '**/webpack.*.js',
+          '**/script/*.js',
+          '**/.storybook/*.@(js|ts)?(x)',
+        ],
       },
     ],
     'react-hooks/rules-of-hooks': 'error',
