@@ -1,6 +1,7 @@
 {
   "name": "monorepo-template",
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.1.1",
+  "private": true,
   "workspaces": [
     "packages/*"
   ],
@@ -10,7 +11,8 @@
     "common-styles": "yarn workspace @common/styles",
     "prototype-a": "yarn workspace prototype-a",
     "prototype-b": "yarn workspace prototype-b",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "test:all": "yarn workspaces foreach --parallel --include @acommon/components --include @prototype-a run test"
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.7.0",
@@ -24,6 +26,8 @@
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-jest-dom": "^4.0.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
@@ -31,6 +35,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
+    "process": "^0.11.10",
     "react": "^17.0.2",
     "typescript": "^4.5.4"
   }

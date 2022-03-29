@@ -3,16 +3,18 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
+    "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"]
     },
     "composite": true,
+    "types": ["node", "jest"],
     "plugins": [
       {
         "name": "typescript-styled-plugin",
         "tags": ["styled", "css"]
       }
     ]
-  },
-  "include": ["../common-styles/src/emotion.d.ts", "src/**/*", "@types/*"]
+  }, 
+  "include": ["../common-styles/src/emotion.d.ts", "src/**/*", "src/**/*.spec.js", "@types/*", "jest.setup.ts"]
 }

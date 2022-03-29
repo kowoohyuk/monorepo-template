@@ -2,21 +2,32 @@ const path = require('path');
 
 module.exports = {
   extends: ['airbnb', 'prettier'],
-  plugins: ['prettier', 'react-hooks', '@emotion'],
+  plugins: ['prettier', 'react-hooks', '@emotion', 'jest', 'jest-dom'],
   rules: {
     'prettier/prettier': 'error',
     'import/no-extraneous-dependencies': [
       'error',
       {
-        devDependencies: ['**/webpack.*.js', '**/script/*.js'],
+        devDependencies: [
+          '**/*.@(spec|test).@(js|ts)?(x)',
+          '**/testUtils.tsx',
+          '**/jest.setup.ts',
+          '**/webpack.*.js',
+          '**/script/*.js',
+          '**/mocks/**/*.@(js|ts)?(x)',
+        ],
       },
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'] }],
+    'react/jsx-filename-extension': [
+      'error',
+      { extensions: ['.tsx', '.jsx', 'spec.js'] },
+    ],
     'react/function-component-definition': 'off',
+    'import/no-duplicates': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -28,7 +39,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'import/no-duplicates': 'off',
     'import/order': [
       'error',
       {
@@ -81,6 +91,13 @@ module.exports = {
       },
       parserOptions: {
         project: ['./tsconfig.json', './packages/**/tsconfig.json'],
+      },
+    },
+    {
+      files: ['**/*.spec.ts?(x)'],
+      rules: {
+        '@typescript-eslint/unbound-method': 'off',
+        'jest/unbound-method': 'error',
       },
     },
     {
@@ -145,7 +162,7 @@ module.exports = {
     },
   ],
   settings: {
-    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx', 'spec.js'],
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts', '.js', '.jsx'],
     },
@@ -160,5 +177,6 @@ module.exports = {
   },
   env: {
     browser: true,
+    'jest/globals': true,
   },
 };

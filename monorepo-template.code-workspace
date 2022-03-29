@@ -1,5 +1,3 @@
-// multi-root workspaces를 위한 파일입니다.
-// 참고: https://code.visualstudio.com/docs/editor/multi-root-workspaces
 {
   "folders": [
     {
@@ -13,7 +11,7 @@
     },
     {
       "path": "packages/prototype-b"
-    }
+    },
   ],
   "settings": {
     "search.exclude": {
@@ -22,6 +20,12 @@
       "**/dist": true,
       "**/node_modules": true,
       "tsconfig.tsbuildinfo": true
+    },
+    "jest.jestCommandLine": "yarn test",
+    "jest.autoRun": {
+      "watch": false,
+      "onStartup": ["all-tests"],
+      "onSave": "test-file"
     },
     "eslint.nodePath": "../../.yarn/sdks",
     "typescript.tsdk": "../../.yarn/sdks/typescript/lib",

@@ -1,6 +1,6 @@
 # woowahan-monorepo-template
 
-jest 및 storybook을 제외한 기본적인 형태의 모노레포입니다.  
+jest를 적용한 모노레포입니다.  
 ## 시작하기
 
 1. yarn이 설치되어 있지 않다면 <code>npm install -g yarn</code>을 우선 실행해 주세요. 
@@ -58,7 +58,7 @@ jest 및 storybook을 제외한 기본적인 형태의 모노레포입니다.
   ...
 }
 ```
-> 참고: [package.json 9~13 lines](/package.json)
+> 참고: [package.json 9~12 lines](/package.json)
 
 
 2. 다른 프로젝트의 참조
@@ -94,12 +94,11 @@ jest 및 storybook을 제외한 기본적인 형태의 모노레포입니다.
   },
 },
 ```
-> 참고: [eslintrc.js 86~145 lines](/.eslintrc.js)
+> 참고: [eslintrc.js 102~161 lines](/.eslintrc.js)
 
 4. tsconfig 설정
 
-참조할 프로젝트에 대한 root 경로의 references 설정이 필요합니다.  
-이후 개별 프로젝트의 tsconfig에서 composite 설정을 하게 됩니다.
+참조할 프로젝트에 대한 root 경로의 references 설정과 개별 프로젝트의 composite 설정이 필요합니다.
 
 ```js
 "references": [
@@ -118,3 +117,16 @@ jest 및 storybook을 제외한 기본적인 형태의 모노레포입니다.
 ```
 > 참고: [prototype-a/tsconfig.json 9 lines](/packages/prototype-a/tsconfig.json)
 
+5. jest 설정
+
+workspace-tools 플러그인을 설치하면, 전체 프로젝트의 테스트가 편리해집니다! <code>yarn plugin import workspace-tools</code>을 실행해 주세요!
+> 참고: <https://yarnpkg.com/cli/workspaces/foreach>
+
+```js
+{
+  "test:all": "yarn workspaces foreach --parallel run test",
+}
+```
+> 참고: [package.json 13 lines](/package.json)
+
+개별 프로젝트의 jest 설정은 [링크](/packages/common-components)를 참고해 주세요.

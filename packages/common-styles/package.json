@@ -1,13 +1,7 @@
 {
   "name": "@common/styles",
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@3.1.1",
   "main": "src/index.ts",
-  "dependencies": {
-    "@babel/runtime": "^7.16.7",
-    "@emotion/react": "^11.7.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
@@ -15,9 +9,17 @@
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
+    "@common/components": "workspace:*",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "babel-loader": "^8.2.3",
     "typescript": "^4.5.4",
     "typescript-styled-plugin": "^0.18.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.7",
+    "@emotion/react": "^11.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

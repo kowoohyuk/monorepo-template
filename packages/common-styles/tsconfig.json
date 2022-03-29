@@ -12,9 +12,5 @@
       }
     ]
   },
-  "include": [
-    "../common-styles/src/emotion.d.ts",
-    "src/**/*",
-    "src/**/*.json",
-  ]
+  "include": ["src/**/*"]
 }

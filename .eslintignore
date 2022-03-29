@@ -5,4 +5,4 @@ node_modules
 .pnp.cjs
 .pnp.loager.mjs
 !.storybook
-webpack.config.js
+mockServiceWorker.js

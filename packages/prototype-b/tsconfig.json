@@ -14,5 +14,5 @@
       }
     ]
   },
-  "include": ["../common-styles/src/emotion.d.ts", "src/**/*"]
+  "include": ["../common-styles/src/emotion.d.ts", "src/**/*", "@types/*"]
 }

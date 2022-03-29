@@ -10,5 +10,5 @@
       { "runtime": "automatic", "importSource": "@emotion/react" }
     ],
     ["@babel/typescript", { "onlyRemoveTypeImports": true }]
-  ]
+  ],
 }

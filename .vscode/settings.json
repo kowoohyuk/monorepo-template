@@ -1,0 +1,22 @@
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/tsconfig.tsbuildinfo": true,
+    ".eslintcache": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "jest.jestCommandLine": "yarn test",
+  "jest.autoRun": {
+    "watch": false,
+    "onStartup": [
+      "all-tests"
+    ],
+    "onSave": "test-file"
+  },
+}

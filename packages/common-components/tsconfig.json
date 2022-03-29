@@ -5,6 +5,7 @@
     "jsxImportSource": "@emotion/react",
     "baseUrl": ".",
     "composite": true,
+    "types": ["jest"],
     "plugins": [
       {
         "name": "typescript-styled-plugin",
@@ -14,8 +15,11 @@
   },
   "include": [
     "../common-styles/src/emotion.d.ts",
-    "@types/*",
     "src/**/*",
+    "src/**/*.spec.js",
     "src/**/*.json",
+    "@types/*",
+    "utils/**/*",
+    "jest.setup.ts"
   ]
 }
