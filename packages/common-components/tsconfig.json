@@ -20,6 +20,7 @@
     "src/**/*.json",
     "@types/*",
     "utils/**/*",
+    ".storybook/*",
     "jest.setup.ts"
   ]
 }

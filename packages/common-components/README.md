@@ -19,4 +19,3 @@
 - tsconfig.json
    jest 관련 types 및 include 설정이 포함되어 있습니다.
 ```
-

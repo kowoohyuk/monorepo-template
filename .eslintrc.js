@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'prettier', 'plugin:storybook/recommended'],
   plugins: ['prettier', 'react-hooks', '@emotion', 'jest', 'jest-dom'],
   rules: {
     'prettier/prettier': 'error',
@@ -9,9 +9,11 @@ module.exports = {
       'error',
       {
         devDependencies: [
+          '**/*.stories.tsx',
           '**/*.@(spec|test).@(js|ts)?(x)',
           '**/testUtils.tsx',
           '**/jest.setup.ts',
+          '**/.storybook/*.@(js|ts)?(x)',
           '**/webpack.*.js',
           '**/script/*.js',
           '**/mocks/**/*.@(js|ts)?(x)',
