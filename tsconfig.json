@@ -20,6 +20,9 @@
     {
       "path": "packages/common-styles"
     },
+    {
+      "path": "packages/common-utils"
+    },
   ],
   "exclude": ["packages/**/dist/**"],
   "include": []
