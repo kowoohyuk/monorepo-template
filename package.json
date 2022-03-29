@@ -12,7 +12,7 @@
     "prototype-a": "yarn workspace prototype-a",
     "prototype-b": "yarn workspace prototype-b",
     "postinstall": "husky install",
-    "test:all": "yarn workspaces foreach --parallel --include @acommon/components --include @prototype-a run test"
+    "test:all": "yarn workspaces foreach --parallel --include @common/components --include prototype-a run test"
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.7.0",
