@@ -4,9 +4,9 @@
 
 ## 바로가기
 
-- [기본 모노레포 브랜치](/tree/normal)
-- [storybook 모노레포 브랜치](/tree/storybook)
-- [jest 모노레포 브랜치](/tree/jest)
+- [기본 모노레포 브랜치](https://github.com/kowoohyuk/monorepo-template/tree/normal)
+- [storybook 모노레포 브랜치](https://github.com/kowoohyuk/monorepo-template/tree/storybook)
+- [jest 모노레포 브랜치](https://github.com/kowoohyuk/monorepo-template/tree/jest)
 - **storybook + jest 모노레포 브랜치**
 
 ## 시작하기
@@ -60,7 +60,7 @@
   ...
 }
 ```
-> 코드 참고: [package.json 10~13 lines](/package.json)
+> 코드 참고: [package.json 10~14 lines](/package.json)
 
 2. 다른 프로젝트의 참조
 각 프로젝트는 package.json의 <code>name</code>으로 식별하며, 다른 프로젝트는 아래와 같은 방식으로 해당 프로젝트를 참조하게 됩니다.
@@ -95,7 +95,7 @@
   },
 },
 ```
-> 코드 참고: [eslintrc.js 106~164 lines](/.eslintrc.js)
+> 코드 참고: [eslintrc.js 105~179 lines](/.eslintrc.js)
 
 4. tsconfig 설정
 
@@ -113,11 +113,13 @@
   },
 ],
 ```
-> 코드 참고: [tsconfig.json 16~23 lines](/tsconfig.json)
+> 코드 참고: [tsconfig.json 16~26 lines](/tsconfig.json)
 
 ```js
-    "composite": true,
-    "declaration": true,
+"compilerOptions": {
+  "composite": true,
+  "declaration": true,
+}
 ```
 > 코드 참고: [common-components/tsconfig.json 7~8 lines](/packages/common-components/tsconfig.json)
 
@@ -134,3 +136,71 @@ workspace-tools 플러그인을 설치하면, 전체 프로젝트의 테스트�
 > 코드 참고: [package.json 16 lines](/package.json)
 
 개별 프로젝트의 jest 설정은 [링크](/packages/common-components)를 참고해 주세요.
+
+## 새로운 프로젝트 추가
+
+1. workspaces 내부에 새로운 폴더를 생성합니다.
+
+2. package.json를 생성합니다.
+   - dependencies를 설정합니다.
+   - 참조할 프로젝트가 있다면 경로를 dependencies에 추가합니다.
+      ```js
+        "dependencies": {
+          // ...
+          "프로젝트명": "workspace:*",
+        }
+      ```
+3. tsconfig.json를 생성합니다.
+   - 공통으로 사용하는 tsconfig가 있다면, extends 합니다.
+     ```js
+     {
+       "extends": "../../tsconfig.json",
+     }
+     ```
+4. (필요한 경우) 루트에 위치하는 package.json에 script를 추가합니다.
+    ```js
+    "scripts": {
+        "별칭": "yarn workspace 프로젝트명",
+    } // => yarn 별칭 프로젝트scripts
+    ```
+5. 새로운 프로젝트를 다른 프로젝트가 참조한다면,
+    1. 해당 프로젝트의 tsconfig에 composite 및 declartion을 설정합니다.
+    2. 참조하는 프로젝트의 dependencies에 해당 프로젝트를 설정합니다.
+    3. (필요한 경우) 루트에 위치하는 tsconfig의 references에 경로를 추가합니다.
+    ```js
+    // 1  
+    "references": [
+      {
+        "path": "프로젝트 경로"
+      },
+    ]
+    // 2
+    "compilerOptions": {
+      "composite": true,
+      "declaration": true,
+    }
+    // 3
+    "dependencies": {
+      "프로젝트명": "workspace:*",
+    }
+    ```
+6. eslint 설정 파일의 setting/overrides에 해당 프로젝트를 추가합니다.
+    ```js
+    {
+      files: [
+        '프로젝트 경로/**/*.ts?(x)',
+        '프로젝트 경로/**/*.js?(x)',
+      ],
+      settings: {
+        'import/resolver': {
+          typescript: {
+            project: path.resolve(
+              `${__dirname}/프로젝트 경로/tsconfig.json`
+            ),
+          },
+        },
+      },
+    },
+    ```
+7. lint-staged를 사용한다면, 해당 프로젝트를 추가합니다. 
+8. yarn install
