@@ -1598,7 +1598,6 @@ __metadata:
     "@storybook/builder-webpack5": ^6.4.12
     "@storybook/manager-webpack5": ^6.4.12
     "@storybook/react": ^6.4.12
-    "@types/ramda": ^0.27.63
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     "@types/react-transition-group": ^4.4.4
@@ -1606,7 +1605,6 @@ __metadata:
     clsx: ^1.1.1
     cuid: ^2.1.8
     prop-types: ^15.8.1
-    ramda: ^0.27.2
     react: ^17.0.2
     react-dom: ^17.0.2
     react-router-dom: ^6.2.1
@@ -3784,15 +3782,6 @@ __metadata:
   version: 6.9.7
   resolution: "@types/qs@npm:6.9.7"
   checksum: 7fd6f9c25053e9b5bb6bc9f9f76c1d89e6c04f7707a7ba0e44cc01f17ef5284adb82f230f542c2d5557d69407c9a40f0f3515e8319afd14e1e16b5543ac6cdba
-  languageName: node
-  linkType: hard
-
-"@types/ramda@npm:^0.27.63":
-  version: 0.27.66
-  resolution: "@types/ramda@npm:0.27.66"
-  dependencies:
-    ts-toolbelt: ^6.15.1
-  checksum: eea577e4a0934849b4103c1452a7c8ddbc9bbf0e2aafb908467212654555145f846a16fe737563b582e8fb5bd6698481ebec1237537e5e662587c47f626e4c92
   languageName: node
   linkType: hard
 
@@ -12734,13 +12723,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ramda@npm:^0.27.2":
-  version: 0.27.2
-  resolution: "ramda@npm:0.27.2"
-  checksum: 28d6735dd1eea1a796c56cf6111f3673c6105bbd736e521cdd7826c46a18eeff337c2dba4668f6eed990d539b9961fd6db19aa46ccc1530ba67a396c0a9f580d
-  languageName: node
-  linkType: hard
-
 "randombytes@npm:^2.0.0, randombytes@npm:^2.0.1, randombytes@npm:^2.0.5, randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -14912,13 +14894,6 @@ __metadata:
     typescript:
       optional: true
   checksum: c2a698b85d521298fe6f2435fbf2d3dc5834b423ea25abd321805ead3f399dbeedce7ca09492d7eb005b9d2c009c6b9587055bc3ab273dc6b9e40eefd7edb5b2
-  languageName: node
-  linkType: hard
-
-"ts-toolbelt@npm:^6.15.1":
-  version: 6.15.5
-  resolution: "ts-toolbelt@npm:6.15.5"
-  checksum: 24ad00cfd9ce735c76c873a9b1347eac475b94e39ebbdf100c9019dce88dd5f4babed52884cf82bb456a38c28edd0099ab6f704b84b2e5e034852b618472c1f3
   languageName: node
   linkType: hard
 

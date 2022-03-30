@@ -3,10 +3,6 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
-    "paths": {
-      "~/*": ["./src/*"]
-    },
-    "composite": true,
     "plugins": [
       {
         "name": "typescript-styled-plugin",

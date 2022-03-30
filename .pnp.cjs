@@ -2814,7 +2814,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/builder-webpack5", "virtual:391789c518a8c0642d0c6925d68078434837c712e723c1001808b9170e17203e9d138dc60d05d4b7cf76fe1c566019d24203e14deb717c666922f51fa7c1f079#npm:6.4.19"],\
             ["@storybook/manager-webpack5", "virtual:391789c518a8c0642d0c6925d68078434837c712e723c1001808b9170e17203e9d138dc60d05d4b7cf76fe1c566019d24203e14deb717c666922f51fa7c1f079#npm:6.4.19"],\
             ["@storybook/react", "virtual:391789c518a8c0642d0c6925d68078434837c712e723c1001808b9170e17203e9d138dc60d05d4b7cf76fe1c566019d24203e14deb717c666922f51fa7c1f079#npm:6.4.19"],\
-            ["@types/ramda", "npm:0.27.66"],\
             ["@types/react", "npm:17.0.43"],\
             ["@types/react-dom", "npm:17.0.14"],\
             ["@types/react-transition-group", "npm:4.4.4"],\
@@ -2822,7 +2821,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["clsx", "npm:1.1.1"],\
             ["cuid", "npm:2.1.8"],\
             ["prop-types", "npm:15.8.1"],\
-            ["ramda", "npm:0.27.2"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:40d7f9ffaa138e49294e502d18f847b2aaeb51a6665ba0a769fdec13cf9a762aee6a9a5a420d2a584cce90475436035f01f6a8c3616d22bb5d11e1a9df569a89#npm:17.0.2"],\
             ["react-router-dom", "virtual:391789c518a8c0642d0c6925d68078434837c712e723c1001808b9170e17203e9d138dc60d05d4b7cf76fe1c566019d24203e14deb717c666922f51fa7c1f079#npm:6.2.2"],\
@@ -6338,16 +6336,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-qs-npm-6.9.7-4a3e6ca0d0-7fd6f9c250.zip/node_modules/@types/qs/",\
           "packageDependencies": [\
             ["@types/qs", "npm:6.9.7"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/ramda", [\
-        ["npm:0.27.66", {\
-          "packageLocation": "./.yarn/cache/@types-ramda-npm-0.27.66-b6f7950b84-eea577e4a0.zip/node_modules/@types/ramda/",\
-          "packageDependencies": [\
-            ["@types/ramda", "npm:0.27.66"],\
-            ["ts-toolbelt", "npm:6.15.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -17155,13 +17143,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ramda", "npm:0.21.0"]\
           ],\
           "linkType": "HARD"\
-        }],\
-        ["npm:0.27.2", {\
-          "packageLocation": "./.yarn/cache/ramda-npm-0.27.2-5f4ede0eb9-28d6735dd1.zip/node_modules/ramda/",\
-          "packageDependencies": [\
-            ["ramda", "npm:0.27.2"]\
-          ],\
-          "linkType": "HARD"\
         }]\
       ]],\
       ["randombytes", [\
@@ -19843,15 +19824,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/typescript",\
             "typescript"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["ts-toolbelt", [\
-        ["npm:6.15.5", {\
-          "packageLocation": "./.yarn/cache/ts-toolbelt-npm-6.15.5-e42f89942f-24ad00cfd9.zip/node_modules/ts-toolbelt/",\
-          "packageDependencies": [\
-            ["ts-toolbelt", "npm:6.15.5"]\
           ],\
           "linkType": "HARD"\
         }]\
