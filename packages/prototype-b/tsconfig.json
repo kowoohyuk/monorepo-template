@@ -6,7 +6,6 @@
     "paths": {
       "~/*": ["./src/*"]
     },
-    "composite": true,
     "plugins": [
       {
         "name": "typescript-styled-plugin",
