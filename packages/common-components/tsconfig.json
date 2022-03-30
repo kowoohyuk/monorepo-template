@@ -5,6 +5,7 @@
     "jsxImportSource": "@emotion/react",
     "baseUrl": ".",
     "composite": true,
+    "declaration": true,
     "types": ["jest"],
     "plugins": [
       {

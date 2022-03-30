@@ -1,6 +1,14 @@
 # woowahan-monorepo-template
 
 jest를 적용한 모노레포입니다.  
+
+## 바로가기
+
+- [기본 모노레포 브랜치](https://github.com/kowoohyuk/monorepo-template/tree/normal)
+- [storybook 모노레포 브랜치](https://github.com/kowoohyuk/monorepo-template/tree/storybook)
+- **jest 모노레포 브랜치**
+- [storybook + jest 모노레포 브랜치](https://github.com/kowoohyuk/monorepo-template)
+
 ## 시작하기
 
 1. yarn이 설치되어 있지 않다면 <code>npm install -g yarn</code>을 우선 실행해 주세요. 
@@ -14,36 +22,30 @@ jest를 적용한 모노레포입니다.
 
 ```markdown
 - /.husky
-  husky 라이브러리 관련 코드가 위치하며, pre-commit을 수행합니다.
-
+   husky 라이브러리 관련 코드가 위치하며, pre-commit을 수행합니다.
 - /packages
-  프로젝트들이 위치하는 디렉터리 입니다.
-  package.json의 workspaces를 통해 경로로 지정됩니다.
+   프로젝트들이 위치하는 디렉터리 입니다.
+   package.json의 workspaces를 통해 경로로 지정됩니다.
   - common-components
-    공통으로 사용하는 컴포넌트를 담당하는 프로젝트 입니다.
+     공통으로 사용하는 컴포넌트를 담당하는 프로젝트 입니다.
   - hooks
-    공통으로 사용하는 스타일을 담당하는 프로젝트 입니다.
+     공통으로 사용하는 스타일을 담당하는 프로젝트 입니다.
   - prototype-a
-    개별적인 프로젝트 입니다.
+     개별적인 프로젝트 입니다.
   - prototype-b
-    개별적인 프로젝트 입니다.
-
+     개별적인 프로젝트 입니다.
 - .eslintrc.js
-  lint의 설정은 동일하기 때문에 개별 프로젝트에서는 lint 설정이 존재하지 않습니다.  
-  따라서 lint 통합 설정 파일이 됩니다.
-
+   lint의 설정은 동일하기 때문에 개별 프로젝트에서는 lint 설정이 존재하지 않습니다.  
+   따라서 lint 통합 설정 파일이 됩니다.
 - .prettierrc.json
-  prettier 통합 설정 파일, lint와 같이 prettier의 설정도 동일합니다.  
-  lint와 마찬가지로 개별 프로젝트에는 prettier 설정이 존재하지 않습니다.
-
+   prettier 통합 설정 파일, lint와 같이 prettier의 설정도 동일합니다.  
+   lint와 마찬가지로 개별 프로젝트에는 prettier 설정이 존재하지 않습니다.
 - lint-staged.config.js
-  lint-staged 설정입니다.
-
+   lint-staged 설정입니다.
 - monorepo-template.code-workspace
-  [multi-root workspaces](https://code.visualstudio.com/docs/editor/multi-root-workspaces)를 위한 파일입니다.
-
+   [multi-root workspaces](https://code.visualstudio.com/docs/editor/multi-root-workspaces)를 위한 파일입니다.
 - tsconfig.json
-  공통적으로 적용되는 타입스크립트 세팅을 개별 프로젝트에서 import하여 사용합니다.
+   공통적으로 적용되는 타입스크립트 세팅을 개별 프로젝트에서 import하여 사용합니다
 ```
 
 ### 참고사항
@@ -58,7 +60,7 @@ jest를 적용한 모노레포입니다.
   ...
 }
 ```
-> 참고: [package.json 9~12 lines](/package.json)
+> 참고: [package.json 10~14 lines](/package.json)
 
 
 2. 다른 프로젝트의 참조
@@ -71,7 +73,7 @@ jest를 적용한 모노레포입니다.
   ...
 }
 ```
-> 참고: [prototype-a/package.json 10~11 lines](/packages/prototype-a/package.json)
+> 참고: [prototype-a/package.json 11~12 lines](/packages/prototype-a/package.json)
 
 3. eslint 설정
 
@@ -94,11 +96,13 @@ jest를 적용한 모노레포입니다.
   },
 },
 ```
-> 참고: [eslintrc.js 102~161 lines](/.eslintrc.js)
+> 참고: [eslintrc.js 103~177 lines](/.eslintrc.js)
 
 4. tsconfig 설정
 
-참조할 프로젝트에 대한 root 경로의 references 설정과 개별 프로젝트의 composite 설정이 필요합니다.
+(필요한 경우) 루트에 위치하는 tsconfig의 references에 경로를 추가합니다.
+참조될 개별 프로젝트의 tsconfig에는 composite 및 declartion을 설정합니다.
+> 참고: <https://www.typescriptlang.org/docs/handbook/project-references.html>
 
 ```js
 "references": [
@@ -110,12 +114,15 @@ jest를 적용한 모노레포입니다.
   },
 ],
 ```
-> 참고: [tsconfig.json 16~23 lines](/tsconfig.json)
+> 참고: [tsconfig.json 16~26 lines](/tsconfig.json)
 
 ```js
-"composite": true,
+"compilerOptions": {
+  "composite": true,
+  "declaration": true,
+}
 ```
-> 참고: [prototype-a/tsconfig.json 9 lines](/packages/prototype-a/tsconfig.json)
+> 참고: [common-components/tsconfig.json 7~8 lines](/packages/common-components/tsconfig.json)
 
 5. jest 설정
 
@@ -127,6 +134,6 @@ workspace-tools 플러그인을 설치하면, 전체 프로젝트의 테스트�
   "test:all": "yarn workspaces foreach --parallel run test",
 }
 ```
-> 참고: [package.json 13 lines](/package.json)
+> 참고: [package.json 16 lines](/package.json)
 
 개별 프로젝트의 jest 설정은 [링크](/packages/common-components)를 참고해 주세요.

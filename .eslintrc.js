@@ -132,6 +132,21 @@ module.exports = {
     },
     {
       files: [
+        'packages/common-utils/**/*.ts?(x)',
+        'packages/common-utils/**/*.js?(x)',
+      ],
+      settings: {
+        'import/resolver': {
+          typescript: {
+            project: path.resolve(
+              `${__dirname}/packages/common-utils/tsconfig.json`
+            ),
+          },
+        },
+      },
+    },
+    {
+      files: [
         'packages/prototype-a/**/*.ts?(x)',
         'packages/prototype-a/**/*.js?(x)',
       ],
